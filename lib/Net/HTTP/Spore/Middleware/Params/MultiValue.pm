@@ -7,18 +7,18 @@ BEGIN {
 
 =head1 SYNOPSIS
  
- Enables the description of multivalues via an array ref.
+ Enables the description of multiple values for a parameter via an array ref.
  my $client = Net::HTTP::Spore->new;
- $client->some_remote_action( param => [ "value1", "value2", ... ] )
+ $client->some_remote_action( param1 => [ "value1", "value2", ... ] )
 
 =method _unwind_params 
  
- Takes the spore.param array, and if an array ref is detected
- "unwinds" them.
+ Expects the spore.param array. If an array ref is detected "unwinds" it.
+
   E.g.
-   spore.param = [ 'num', [1,2,3]  ]
+   spore.param = [ 'num', [1,2,3], 'letter', 'P'  ]
    becomes
-   spore.param = [ 'num', 1, 'num', 2, 'num', 3]
+   spore.param = [ 'num', 1, 'num', 2, 'num', 3, 'letter', 'P']
 
 =head1 SEE ALSO
 
@@ -64,10 +64,5 @@ sub _unwind_params {
     }
     return \@out; 
 }
-
- 
- 
 1;
- 
- 
 __END__
