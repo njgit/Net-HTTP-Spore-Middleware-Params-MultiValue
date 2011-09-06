@@ -7,8 +7,9 @@ BEGIN {
 
 =head1 SYNOPSIS
  
- Enables the description of multiple values for a parameter via an array (ref).
- my $client = Net::HTTP::Spore->new;
+ Enables the description of multiple values for a parameter via an array (reference).
+ my $client = Net::HTTP::Spore->new_from_spec('some_spec.json');
+ $client->enable('Params::MultiValue');
  my $response = $client->some_remote_action( param1 => [ "value1", "value2", ... ] );
 
 =method _unwind_params 
