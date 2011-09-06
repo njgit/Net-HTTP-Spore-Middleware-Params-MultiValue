@@ -13,12 +13,12 @@ BEGIN {
 
 =method _unwind_params 
  
- Expects the spore.param array. If an array ref is detected "unwinds" it.
+ Expects the spore.params array. If an array ref is detected "unwinds" it.
 
   E.g.
-   spore.param = [ 'num', [1,2,3], 'letter', 'P'  ]
+   spore.params = [ 'num', [1,2,3], 'letter', 'P'  ]
    becomes
-   spore.param = [ 'num', 1, 'num', 2, 'num', 3, 'letter', 'P']
+   spore.params = [ 'num', 1, 'num', 2, 'num', 3, 'letter', 'P']
 
 =head1 SEE ALSO
 
